@@ -1,0 +1,30 @@
+<%- include("./parts/header.ejs")%>
+    <%- include("./parts/nav.ejs")%>
+        <div class="container" style="padding-top: 8px;">
+            <div class="row">
+                <% for(let product of products){%>
+                    <div class="col col-12 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card" style="width: 18rem;">
+                            <div class="image-holder" style="height: 270px;">
+                                <img src="<%=product.image%>" class="card-img-top" style="height: 100%;" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title" style="text-align: center;">
+                                    <%=product.name%>
+                                </h2>
+                                <h5 class="card-text" style="text-align: center;">
+                                    category: <%=product.category%>
+                                </h5>
+                                <form action="/product/product.id">
+                                    <input type="text" placeholder="Enter product amount" name="" id=""
+                                        style="display: block;margin:auto;padding-left:8px">
+                                    <input type="submit" value="order" class="btn btn-primary"
+                                        style="display: block;margin:auto;margin-top:10px">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <%}%>
+            </div>
+        </div>
+        <%- include("./parts/footer.ejs")%>
